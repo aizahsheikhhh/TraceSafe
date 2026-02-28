@@ -4,27 +4,37 @@
   <meta charset="UTF-8">
   <title>TraceSafe - Digital Exposure Analyzer</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
   <div class="container">
     <h1>TraceSafe</h1>
-    <p class="subtitle">Analyze your digital footprint risk in seconds.</p>
+    <p class="subtitle">Analyze your digital footprint and URL risks.</p>
 
+    <!-- Digital Habits Section -->
     <div class="card">
-      <h3>Select Your Online Behaviours</h3>
-
+      <h3>Online Habits</h3>
       <label><input type="checkbox" value="20" data-category="privacy"> Public Social Media Profile</label>
       <label><input type="checkbox" value="15" data-category="privacy"> Frequent Location Tagging</label>
       <label><input type="checkbox" value="25" data-category="security"> Same Password Across Accounts</label>
       <label><input type="checkbox" value="10" data-category="security"> Accept Unknown DMs</label>
       <label><input type="checkbox" value="20" data-category="privacy"> Post Personal Contact Info</label>
       <label><input type="checkbox" value="30" data-category="reputation"> Controversial/Offensive Posts</label>
-
       <button onclick="calculateRisk()">Analyze Risk</button>
     </div>
 
-    <div class="results">
+    <!-- URL Analyzer Section -->
+    <div class="card">
+      <h3>URL / Job Link Analyzer</h3>
+      <input type="text" id="urlInput" placeholder="Paste URL here (https://...)">
+      <button onclick="analyzeURL()">Analyze URL</button>
+      <div id="urlResult"></div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="card">
+      <h3>Results</h3>
       <div class="risk-bar-container">
         <div id="riskBar"></div>
       </div>
@@ -32,12 +42,14 @@
       <p id="breakdown"></p>
       <p id="advice"></p>
     </div>
+
+    <!-- Radar Chart Section -->
+    <div class="card">
+      <h3>Category Breakdown</h3>
+      <canvas id="radarChart"></canvas>
+    </div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-<label>Paste a URL to analyze risk:</label>
-<input type="text" id="urlInput" placeholder="https://example.com/job-post">
-<button onclick="analyzeURL()">Analyze URL</button>
-<p id="urlResult"></p>
