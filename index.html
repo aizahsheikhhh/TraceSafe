@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TraceSafe - Digital Exposure Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>TraceSafe</h1>
+    <p class="subtitle">Analyze your digital footprint risk in seconds.</p>
+
+    <div class="card">
+      <h3>Select Your Online Behaviours</h3>
+
+      <label><input type="checkbox" value="20" data-category="privacy"> Public Social Media Profile</label>
+      <label><input type="checkbox" value="15" data-category="privacy"> Frequent Location Tagging</label>
+      <label><input type="checkbox" value="25" data-category="security"> Same Password Across Accounts</label>
+      <label><input type="checkbox" value="10" data-category="security"> Accept Unknown DMs</label>
+      <label><input type="checkbox" value="20" data-category="privacy"> Post Personal Contact Info</label>
+      <label><input type="checkbox" value="30" data-category="reputation"> Controversial/Offensive Posts</label>
+
+      <button onclick="calculateRisk()">Analyze Risk</button>
+    </div>
+
+    <div class="results">
+      <div class="risk-bar-container">
+        <div id="riskBar"></div>
+      </div>
+      <h2 id="scoreOutput"></h2>
+      <p id="breakdown"></p>
+      <p id="advice"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
