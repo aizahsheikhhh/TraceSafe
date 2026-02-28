@@ -59,3 +59,19 @@ function generateAdvice(p, s, r) {
 
   return advice;
 }
+function analyzeURL() {
+  const url = document.getElementById("urlInput").value;
+  let risk = 0;
+
+  if (!url.startsWith("https")) risk += 20; // Not secure
+  if (url.includes("free") || url.includes("urgent") || url.includes("salary upfront")) risk += 15;
+  if (url.includes("linkedin.com") || url.includes("indeed.com")) risk -= 10; // Safer
+
+  if (risk < 10) {
+    document.getElementById("urlResult").innerText = "Low Risk 🟢";
+  } else if (risk < 30) {
+    document.getElementById("urlResult").innerText = "Medium Risk 🟡";
+  } else {
+    document.getElementById("urlResult").innerText = "High Risk 🔴";
+  }
+}
