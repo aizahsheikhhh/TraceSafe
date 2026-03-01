@@ -1,55 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>TraceSafe - Digital Exposure Analyzer</title>
+  <title>TraceSafe</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-  <div class="container">
-    <h1>TraceSafe</h1>
-    <p class="subtitle">Analyze your digital footprint and URL risks.</p>
+<nav>
+  <h2>TraceSafe</h2>
+  <div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="url-check.html">URL Scanner</a>
+    <a href="emergency.html">Emergency</a>
+  </div>
+</nav>
 
-    <!-- Digital Habits Section -->
-    <div class="card">
-      <h3>Online Habits</h3>
-      <label><input type="checkbox" value="20" data-category="privacy"> Public Social Media Profile</label>
-      <label><input type="checkbox" value="15" data-category="privacy"> Frequent Location Tagging</label>
-      <label><input type="checkbox" value="25" data-category="security"> Same Password Across Accounts</label>
-      <label><input type="checkbox" value="10" data-category="security"> Accept Unknown DMs</label>
-      <label><input type="checkbox" value="20" data-category="privacy"> Post Personal Contact Info</label>
-      <label><input type="checkbox" value="30" data-category="reputation"> Controversial/Offensive Posts</label>
-      <button onclick="calculateRisk()">Analyze Risk</button>
-    </div>
+<section class="hero">
+  <h1>Understand Your Digital Risk</h1>
+  <p>Protect your privacy. Detect scams. Stay safe online.</p>
+  <a class="btn" href="dashboard.html">Start Analysis</a>
+</section>
 
-    <!-- URL Analyzer Section -->
-    <div class="card">
-      <h3>URL / Job Link Analyzer</h3>
-      <input type="text" id="urlInput" placeholder="Paste URL here (https://...)">
-      <button onclick="analyzeURL()">Analyze URL</button>
-      <div id="urlResult"></div>
-    </div>
-
-    <!-- Results Section -->
-    <div class="card">
-      <h3>Results</h3>
-      <div class="risk-bar-container">
-        <div id="riskBar"></div>
-      </div>
-      <h2 id="scoreOutput"></h2>
-      <p id="breakdown"></p>
-      <p id="advice"></p>
-    </div>
-
-    <!-- Radar Chart Section -->
-    <div class="card">
-      <h3>Category Breakdown</h3>
-      <canvas id="radarChart"></canvas>
-    </div>
+<section class="features">
+  <div class="card">
+    <h3>Risk Dashboard</h3>
+    <p>Analyze your digital footprint exposure.</p>
   </div>
 
-  <script src="script.js"></script>
+  <div class="card">
+    <h3>URL Intelligence</h3>
+    <p>Scan job links and websites for scam indicators.</p>
+  </div>
+
+  <div class="card">
+    <h3>Emergency Support</h3>
+    <p>Access fraud hotlines and crisis resources instantly.</p>
+  </div>
+</section>
+
 </body>
 </html>
